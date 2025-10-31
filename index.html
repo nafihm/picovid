@@ -151,9 +151,46 @@ left: 3cm;
 transform: scale(1.1);
 box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: #0b1724;
+      overflow: hidden;
+      cursor: auto;
+    }
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background: #ffffff;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+    .ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+    }
   </style>
 </head>
 <body>
+   <div class="cursor"></div>
+  <div class="ring"></div>
   <div id="navbar">
     <div class="logo">PIC🛞VID</div>
 
@@ -206,6 +243,32 @@ box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         renderPins(filteredPins);
       });
     });
+  </script>
+   <script>
+    const cursor = document.querySelector('.cursor');
+    const ring = document.querySelector('.ring');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+    });
+
+    let x = 0, y = 0, targetX = 0, targetY = 0;
+    const speed = 0.15;
+
+    document.addEventListener('mousemove', e => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+
+    function animate() {
+      x += (targetX - x) * speed;
+      y += (targetY - y) * speed;
+      ring.style.transform = `translate(${x - 40}px, ${y - 40}px)`;
+      requestAnimationFrame(animate);
+    }
+
+    animate();
   </script>
 </body>
 </html>
