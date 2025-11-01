@@ -18,8 +18,28 @@
       background-color: black;
       color: white;
       font-family: Arial, sans-serif;
-      overflow-y: auto; /* ✅ Enable scrolling */
+      overflow-y: scroll; /* ✅ Enable scroll */
       min-height: 100vh;
+    }
+
+    /* ✅ Custom Scrollbar */
+    body::-webkit-scrollbar {
+      width: 12px; /* width of scrollbar */
+    }
+
+    body::-webkit-scrollbar-track {
+      background: #111; /* track color */
+      border-radius: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #29ff7e, #00ccff); /* scrollbar color */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,180,0.5);
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #00ccff, #29ff7e);
     }
 
     /* Navbar */
@@ -32,7 +52,6 @@
       position: sticky;
       top: 0;
       width: 100%;
-      box-sizing: border-box;
       backdrop-filter: blur(10px);
       z-index: 100;
       box-shadow: 0 7px 15px rgba(44, 252, 71, 0.5);
