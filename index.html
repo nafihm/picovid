@@ -33,7 +33,7 @@
     }
 
     body::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #29ff7e, #00ccff); /* scrollbar color */
+      background: gray); /* scrollbar color */
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,255,180,0.5);
     }
@@ -228,12 +228,12 @@
     document.addEventListener('DOMContentLoaded', function() {
       const pinsContainer = document.getElementById('pinsContainer');
       const pinData = [
-        { id: 1, imageUrl: './images/teatalk.png', title: 'TEA TALK' },
-        { id: 2, imageUrl: './images/porsche.png', title: 'Porsche' },
-        { id: 3, imageUrl: './images/pepsi.png', title: 'Pepsi' },
-        { id: 4, imageUrl: './images/suicide.png', title: 'Suicide Death' },
-        { id: 5, imageUrl: './images/lamborghini.png', title: 'Lamborghini' },
-        { id: 6, imageUrl: './images/shelby.png', title: 'Thomas Shelby' }
+        { id: 1, imageUrl: './images/teatalk.png', title: 'Tea Talk'},
+        { id: 2, imageUrl: './images/porsche.png', title: 'Porsche'},
+        { id: 3, imageUrl: './images/pepsi.png', title: 'Pepsi'},
+        { id: 4, imageUrl: './images/suicide.png', title: 'Suicide Death'},
+        { id: 5, imageUrl: './images/lamborghini.png', title: 'Lamborghini'},
+        { id: 6, imageUrl: './images/shelby.png', title: 'Thomas Shelby'}
       ];
 
       const renderPins = (pins) => {
