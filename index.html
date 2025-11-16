@@ -222,6 +222,26 @@
   padding: 15px;
   border-radius: 90px;
 }
+
+.fa fa-instagram {
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.fa fa-instagram:hover .tooltiptext {
+  visibility: visible;
+}
   </style>
 </head>
 <body>
@@ -237,6 +257,7 @@
       <input type="text" class="search-input" id="searchInput" placeholder="Search...">
     </div>
     <a href="https://www.instagram.com/na.ffyy_" class="fa fa-instagram"></a>
+    <span class="tooltiptext">Go to my instagram</span>
     <div class="nav-links">
       <a href="#">Home</a>
     </div>
