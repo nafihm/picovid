@@ -355,27 +355,6 @@
       });
     });
 
-    const ring = document.querySelector('.ring');
-
-    document.addEventListener('mousemove', e => {
-      cursor.style.top = `${e.clientY}px`;
-      cursor.style.left = `${e.clientX}px`;
-    });
-
-    let x = 0, y = 0, targetX = 0, targetY = 0;
-    const speed = 0.15;
-
-    document.addEventListener('mousemove', e => {
-      targetY = e.clientY;
-    });
-
-    function animate() {
-      y += (targetY - y) * speed;
-      ring.style.transform = `translate(${y - 40}px)`;
-      requestAnimationFrame(animate);
-    }
-
-    animate();
   </script>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top"><span>&#8593;</span></button>
@@ -388,7 +367,7 @@ let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
