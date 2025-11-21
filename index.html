@@ -415,5 +415,32 @@ function topFunction() {
 }
 </script>
 
+<script>
+const pinsContainer = document.getElementById("pinsContainer");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("fullImage");
+const captionText = document.getElementById("caption");
+const closeSpan = document.getElementsByClassName("close")[0];
+
+if (pinsContainer) {
+  pinsContainer.addEventListener("click", function(e) {
+    if (e.target.tagName === "IMG") {
+      modal.style.display = "block";
+      modalImg.src = e.target.src;
+      captionText.innerText = e.target.alt;
+    }
+  });
+}
+
+closeSpan.onclick = function () {
+  modal.style.display = "none";
+};
+
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) modal.style.display = "none";
+});
+</script>
+
+
 </body>
 </html>
