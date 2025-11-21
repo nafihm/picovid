@@ -261,7 +261,7 @@
     /* Add Animation */
     @keyframes zoom {
       from {transform:scale(0)} 
-      to {transform:scale(2)}
+      to {transform:scale(1)}
     }
 
     /* The Close Button */
@@ -367,7 +367,7 @@ let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
