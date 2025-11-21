@@ -184,18 +184,6 @@
     }
 
     /* Custom cursor */
-    .cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 14px;
-      height: 14px;
-      background: #ae00f3;
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-    }
 
     .ring {
       position: fixed;
@@ -203,7 +191,7 @@
       left: 0;
       width: 90px;
       height: 90px;
-      border: 3px solid rgba(174, 0, 243, 0.4);
+      border: 3px solid rgba(0, 0, 0, 0.4);
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -367,7 +355,6 @@
       });
     });
 
-    const cursor = document.querySelector('.cursor');
     const ring = document.querySelector('.ring');
 
     document.addEventListener('mousemove', e => {
@@ -379,14 +366,12 @@
     const speed = 0.15;
 
     document.addEventListener('mousemove', e => {
-      targetX = e.clientX;
       targetY = e.clientY;
     });
 
     function animate() {
-      x += (targetX - x) * speed;
       y += (targetY - y) * speed;
-      ring.style.transform = `translate(${x - 40}px, ${y - 40}px)`;
+      ring.style.transform = `translate(${y - 40}px)`;
       requestAnimationFrame(animate);
     }
 
