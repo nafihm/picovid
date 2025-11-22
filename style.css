@@ -267,4 +267,8 @@
     .marquee{
         color: white;
         display: flex;
+        position: relative;
+        z-index: 20;
     }
+
+
